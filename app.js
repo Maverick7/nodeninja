@@ -3,7 +3,7 @@
  */
 var express = require('express')
   , stylus = require('stylus')
-  , nib = require('nib')
+  , nib = require('nib'),routes = require('./routes');
   
  var app = express()
 function compile(str, path) {
@@ -21,11 +21,9 @@ app.use(stylus.middleware(
 ))
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function (req, res) {
-  res.render('index',
-  { title : 'Home' }
-  )
-})
+app.get('/', routes.index)
+app.get('/smile', routes.smile)
+app.get('/ninja', routes.ninja)
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);

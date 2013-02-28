@@ -108,6 +108,10 @@ body {
   background-color: #faf9f0;
   color: #444;
 }
+a {
+  color: #fa5b4d;
+  text-decoration: none;
+}
 header {
   font-family: 'Quicksand';
   padding: 50px 10px;
